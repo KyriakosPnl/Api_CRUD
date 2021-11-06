@@ -20,12 +20,12 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <td>Course ID</td>
-                    <td>Teachers Name</td>
-                    <td>Teachers Email</td>
-                    <td>Published By</td>
-                    <td>Course Link</td>
-                    <td colspan=2>Actions</td>
+                    <td><b>Course ID</b></td>
+                    <td><b>Teachers Name</b></td>
+                    <td><b>Teachers Email</b></td>
+                    <td><b>Published By</b></td>
+                    <td><b>Course Link</b></td>
+                    <td><b>Actions</b></td>
                 </tr>
             </thead>
             <tbody>

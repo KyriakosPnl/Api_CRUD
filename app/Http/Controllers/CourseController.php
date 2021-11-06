@@ -44,7 +44,7 @@ class CourseController extends Controller
             "course_id"=>'required|unique:courses',
             "teacher"=>'required',
             "publisher"=>'required',
-            "url"=>'required'
+            "url"=>'required|unique:courses'
          
         ]);
 

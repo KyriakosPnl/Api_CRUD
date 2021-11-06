@@ -20,7 +20,7 @@ class CoursesTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         // And now, let's create a few articles in our database:
-        for ($i = 0; $i < 50; $i++) { 
+        for ($i = 0; $i < 20; $i++) { 
             Course::create([ 
             'course_id'=> $faker->unique()->randomNumber,
             'teacher' => $faker->name,
