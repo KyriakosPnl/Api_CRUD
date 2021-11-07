@@ -35,7 +35,7 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $req
      * @return \Illuminate\Http\Response
      */
     public function store(Request $req)
@@ -54,7 +54,7 @@ class CourseController extends Controller
         $course->teachers_mail=$req->teachers_mail;
         $course->publisher=$req->publisher;
         $course->url=$req->url;
-        $result=$course->save();
+        $course->save();
 
         return redirect('api/course')->with('success', 'New Cource is saved!');
 
@@ -87,14 +87,14 @@ class CourseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $req
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $req, $id)
     {
-        $this->validate($req,[
-            "course_id"=>'required|unique:courses',
+        $req->validate([
+            "course_id"=>'required',
             "teacher"=>'required',
             "publisher"=>'required',
             "url"=>'required'
@@ -107,7 +107,7 @@ class CourseController extends Controller
         $course->teachers_mail=$req->teachers_mail;
         $course->publisher=$req->publisher;
         $course->url=$req->url;
-        $result=$course->save();
+        $course->save();
 
         return redirect('api/course')->with('success', 'Course updated!');
         //
@@ -122,7 +122,7 @@ class CourseController extends Controller
     public function destroy($id)
     {
         $course= Course::find($id);
-        $result=$course->delete();
+        $course->delete();
         return redirect('api/course')->with('success', 'Course deleted!');
     }
 }

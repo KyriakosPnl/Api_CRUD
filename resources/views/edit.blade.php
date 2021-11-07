@@ -15,29 +15,29 @@
         <br /> 
         @endif
         <form method="post" action="{{ route('course.update', $course->id) }}">
-            @method('PUT') 
+            @method('PATCH') 
             @csrf
             <div class="form-group">                   
                 <label for="course_id">Course ID:</label>
-                <input type="text" class="form-control" name="first_name" value={{ $course->course_id }} />
+                <input type="text" class="form-control" name="course_id" value={{ $course->course_id }} />
             </div>
 
             <div class="form-group">
-                <label for="teacher">Teacher Name:</label>
-                <input type="text" class="form-control" name="last_name" value={{ $course->teacher }} />
+                <label for="teacher">Teachers Name:</label>
+                <input type="text" class="form-control" name="teacher" value={{ $course->teacher }} />
             </div>
 
             <div class="form-group">
                 <label for="teachers_mail">Teachers Email:</label>
-                <input type="text" class="form-control" name="email" value={{ $course->teachers_mail }} />
+                <input type="text" class="form-control" name="teachers_mail" value={{ $course->teachers_mail }} />
             </div>
             <div class="form-group">
                 <label for="publisher">Published From:</label>
-                <input type="text" class="form-control" name="city" value={{ $course->publisher }} />
+                <input type="text" class="form-control" name="publisher" value={{ $course->publisher }} />
             </div>
             <div class="form-group">
                 <label for="url">URL:</label>
-                <input type="text" class="form-control" name="country" value={{ $course->url }} />
+                <input type="text" class="form-control" name="url" value={{ $course->url }} />
             </div>
             
             <button type="submit" class="btn btn-primary">Update Course</button>

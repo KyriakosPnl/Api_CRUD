@@ -14,15 +14,15 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        // Let's truncate our existing records to start from scratch.
+        // truncate our existing records
         Course::truncate();
 
         $faker = \Faker\Factory::create();
 
-        // And now, let's create a few articles in our database:
+        // Create some Courses in our database:
         for ($i = 0; $i < 20; $i++) { 
             Course::create([ 
-            'course_id'=> $faker->unique()->randomNumber,
+            'course_id'=> $faker->unique()->numberBetween(1000, 9999),
             'teacher' => $faker->name,
             'teachers_mail'=>$faker->email,
             'publisher'=>'admin1',
